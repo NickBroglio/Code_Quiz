@@ -65,3 +65,13 @@ body{
 .hide{
     display: none !important;
 }
+.highscores-header{
+    text-align: center;
+}
+.buttons{
+    display: flex;
+    justify-content: center;
+}
+#back-button, #clear-scores-btn{
+    text-align: center;
+}
