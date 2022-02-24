@@ -10,6 +10,9 @@ let indexNumber = 0;
 let randomizedQuestions = [];
 let userChoice;
 let optionsEL = document.getElementById("options");
+let finalScore = document.getElementById("final-score");
+
+let submitButton = document.getElementById("submit-button");
 
 
 // this array list all the questions and their answers
@@ -79,14 +82,12 @@ function checkAnswer() {
     indexNumber++;
     if (indexNumber === quizQuestions.length) {
         endGame();
-        timerCount = 0
+        clearInterval(timer);
+        finalScore.textContent = timerCount;
     } else {
         displayQuestions();
     }
 }
-
-
-
 
 function endGame() {
     // hide questions show end screen
@@ -95,7 +96,21 @@ function endGame() {
     console.log("endgame");
 }
 
+
+
+
+
+submitButton.addEventListener("click", function(event){
+    
+
+if(initials === ""){
+    alert("form cannot be blank");
+}
+let initials = document.getElementById("initials");
+localStorage.setItem("initials", initials);
+});
 // event listener for intial form
+
 // get inital value and put in local storage
 
 
