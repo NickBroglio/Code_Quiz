@@ -42,7 +42,6 @@ let quizQuestions = [
 startButton.addEventListener("click", startTimer);
 function startTimer() {
     let startScreen = document.getElementById("start-screen");
-    console.log(startScreen)
     // once function is run, the start screen hides 
     startScreen.setAttribute("class", "hide");
     questionContainer.removeAttribute("class")
@@ -54,6 +53,7 @@ function startTimer() {
             clearInterval(timer);
         }
     }, 1000);
+    // function here starts displaying content
     displayQuestions();
 }
 
@@ -101,13 +101,11 @@ function endGame() {
 
 
 submitButton.addEventListener("click", function(event){
-    
 
-if(initials === ""){
-    alert("form cannot be blank");
-}
-let initials = document.getElementById("initials");
-localStorage.setItem("initials", initials);
+localStorage.setItem("initials", JSON.stringify(initials));
+localStorage.setItem("score", JSON.stringify(timerCount));
+console.log(timerCount)
+console.log(initials)
 });
 // event listener for intial form
 
