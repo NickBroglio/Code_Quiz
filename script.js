@@ -11,9 +11,7 @@ let randomizedQuestions = [];
 let userChoice;
 let optionsEL = document.getElementById("options");
 let finalScore = document.getElementById("final-score");
-
 let submitButton = document.getElementById("submit-button");
-
 
 // this array list all the questions and their answers
 let quizQuestions = [
@@ -71,7 +69,7 @@ function displayQuestions() {
         optionsEL.appendChild(optionBtn);
     });
 }
-
+// function checks answer to see if correct 
 function checkAnswer() {
     if (this.value !== quizQuestions[indexNumber].correctAnswer) {
         timerCount -= 10;
@@ -88,27 +86,21 @@ function checkAnswer() {
         displayQuestions();
     }
 }
-
+// function reuns once user answers all the questions
 function endGame() {
-    // hide questions show end screen
     let endScreen = document.getElementById("end-screen");
     endScreen.removeAttribute("class");
     console.log("endgame");
 }
-
-
-
-
-
-submitButton.addEventListener("click", function(event){
-
-localStorage.setItem("initials", JSON.stringify(initials));
-localStorage.setItem("score", JSON.stringify(timerCount));
-console.log(timerCount)
-console.log(initials)
+// when submit button is hit, the initials and score are stored in local storage
+submitButton.addEventListener("click", function (event) {
+    localStorage.setItem("initials", JSON.stringify(initials));
+    localStorage.setItem("score", JSON.stringify(timerCount));
+    console.log(timerCount)
+    console.log(initials)
 });
-// event listener for intial form
 
-// get inital value and put in local storage
+
+
 
 

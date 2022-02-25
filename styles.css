@@ -8,7 +8,7 @@ body{
     display: flex;
     justify-content: space-between;
 }
-#view-highscores{
+#view-highscore{
     margin: 40px;
     padding: 20px;
     font-size: 20px;
